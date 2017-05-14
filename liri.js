@@ -1,4 +1,6 @@
+var handles = process.argv[2];
 
+if (handles = "my-tweets") {
 
 // Set Up Twitter
 
@@ -36,4 +38,4 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
     console.log(tweets[1].text); 
     console.log(tweets[0].text);
   }
-});
+})};
