@@ -1,6 +1,4 @@
-var handles = process.argv[2];
-
-if (handles = "my-tweets") {
+var action = process.argv[2];
 
 // Set Up Twitter
 
@@ -12,8 +10,11 @@ var client = new Twitter({
   access_token_key: '854517295485419521-TVfW0uRDbTNZIeaV1tfTAxFQaYlrYMN',
   access_token_secret: 'YKQ2vI2ssbh1p0piFGfODDqoadFRvU64rle2xcTlw7gED'
 });
+
+
  
 // Stream Tweets
+var myTweets = function () {
 var params = {screen_name: 'sodamnfinestein'};
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
   if (!error) {
@@ -39,3 +40,11 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
     console.log(tweets[0].text);
   }
 })};
+
+//Create switches to call different functions
+
+switch (action) {
+    case 'mytweets':
+        myTweets();
+        break;
+};
