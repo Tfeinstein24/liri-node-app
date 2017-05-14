@@ -51,7 +51,7 @@ spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(er
         return;
     }
  
-    console.log(data); 
+    console.log(data.tracks.items); 
 })};
 
 //Create switches to call different functions
