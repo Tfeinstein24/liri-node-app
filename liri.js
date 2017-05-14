@@ -41,10 +41,27 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
   }
 })};
 
+//Spotify
+var spotify = require('spotify');
+
+var spotifyThis = function () {
+spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
+    if ( err ) {
+        console.log('Error occurred: ' + err);
+        return;
+    }
+ 
+    console.log(data); 
+})};
+
 //Create switches to call different functions
 
 switch (action) {
     case 'mytweets':
         myTweets();
         break;
+
+    case 'spotifythis':
+        spotifyThis();
+        break;       
 };
